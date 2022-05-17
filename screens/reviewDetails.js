@@ -5,17 +5,27 @@ import {StyleSheet, View, Text, Button} from 'react-native';
 export default function ReviewDetails({navigation}){
     return(
         <View style={styles.container}>
-            <Text>ReviewDetails Screen</Text>
-            <Button
-          title="Back to Home"
-          onPress={() => navigation.goBack()}
-        />
-        </View>
+      <Text>{ navigation.getParam('title') }</Text>
+      <Text>{ navigation.getParam('body') }</Text>
+      <Text>{ navigation.getParam('rating') }</Text>
+    </View>
     )
 }
 
+
 const styles = StyleSheet.create({
-    container:{
-        padding:24
-    }
-});
+    titleText: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: '#333',
+    },
+    paragraph: {
+      marginVertical: 8,
+      lineHeight: 20,
+    },
+    container: {
+      flex: 1,
+      padding: 20,
+    },
+  });
+  
